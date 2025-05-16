@@ -1,7 +1,22 @@
 plugins {
     id("com.android.library") version "8.2.2" // Android plugin'in doğru versiyonunu belirt
     id("org.jetbrains.kotlin.android") version "1.9.22" // Kotlin plugin versiyonu
+    id("maven-publish")
 }
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            groupId = "com.senturkgurkan"
+            artifactId = "qrScannerSdk"
+            version = "1.0.8"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
+
 
 android {
     namespace = "com.senturkgurkan.qrscannersdk"
@@ -44,3 +59,4 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
+
