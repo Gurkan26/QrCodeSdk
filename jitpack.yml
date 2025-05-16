@@ -7,3 +7,7 @@ android:
 
 install:
   - ./gradlew :qrScannerSdk:build
+
+artifacts:
+  - path: qrScannerSdk/build/outputs/aar
+    name: qrScannerSdk
