@@ -3,24 +3,21 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.9.22" // Kotlin plugin versiyonu
     id("maven-publish")
 }
+
+
 publishing {
     publications {
         create<MavenPublication>("release") {
             groupId = "com.senturkgurkan"
             artifactId = "qrScannerSdk"
             version = "1.0.8"
+
+            afterEvaluate {
+                from(components["release"])  
+            }
         }
     }
 }
-
-afterEvaluate {
-    publishing {
-        publications.named("release", MavenPublication::class) {
-            from(components["release"])
-        }
-    }
-}
-
 
 android {
     namespace = "com.senturkgurkan.qrscannersdk"
@@ -31,6 +28,9 @@ android {
         targetSdk = 34
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+    }
+    publishing {
+        singleVariant("release")
     }
 
     buildTypes {
