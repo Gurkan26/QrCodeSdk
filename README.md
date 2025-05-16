@@ -38,7 +38,7 @@ Step 2 – Add the dependency in your app module build.gradle file:
 
 ```groovy
  dependencies {
-    implementation 'com.github.Gurkan26:QrCodeSdk:1.0.0'
+    implementation("com.github.Gurkan26:QrCodeSdk:1.1.2")
 }
 ```
 
