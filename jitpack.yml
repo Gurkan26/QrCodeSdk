@@ -6,7 +6,7 @@ android:
   enableJetifier: true
 
 install:
-  - ./gradlew :qrScannerSdk:build
+  - ./gradlew :qrScannerSdk:assembleRelease
 
 artifacts:
   - path: qrScannerSdk/build/outputs/aar

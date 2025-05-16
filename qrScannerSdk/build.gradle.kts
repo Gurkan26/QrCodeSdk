@@ -4,21 +4,18 @@ plugins {
     id("maven-publish")
 }
 
-
-publishing {
-    publications {
-        create<MavenPublication>("release") {
-            groupId = "com.senturkgurkan"
-            artifactId = "qrScannerSdk"
-            version = "1.0.8"
-
-            afterEvaluate {
-                from(components["release"])  
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.Gurkan26"
+                artifactId = "QrCodeSdk"
+                version = "1.0.8"
             }
         }
     }
 }
-
 android {
     namespace = "com.senturkgurkan.qrscannersdk"
     compileSdk = 34
