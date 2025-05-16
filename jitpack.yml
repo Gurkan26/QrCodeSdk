@@ -1,0 +1,9 @@
+jdk:
+  - openjdk11
+
+android:
+  useAndroidX: true
+  enableJetifier: true
+
+install:
+  - ./gradlew :qrScannerSdk:build
