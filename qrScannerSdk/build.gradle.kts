@@ -9,10 +9,14 @@ publishing {
             groupId = "com.senturkgurkan"
             artifactId = "qrScannerSdk"
             version = "1.0.8"
+        }
+    }
+}
 
-            afterEvaluate {
-                from(components["release"])
-            }
+afterEvaluate {
+    publishing {
+        publications.named("release", MavenPublication::class) {
+            from(components["release"])
         }
     }
 }

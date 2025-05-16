@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "qrScannerSdk"
+rootProject.name = "QrScannerSdk"
 include(":qrScannerSdk")
